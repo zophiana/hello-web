@@ -1,0 +1,15 @@
+---
+import { cn } from "../utils";
+
+export interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<div class="flex size-full justify-center">
+  <div class={cn("flex w-full max-w-7xl px-4", className)}>
+    <slot />
+  </div>
+</div>
