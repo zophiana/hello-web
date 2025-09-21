@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig } from "eslint/config";
 import eslintPluginAstro from "eslint-plugin-astro";
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
   // add more generic rule sets here, such as:
