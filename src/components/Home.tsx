@@ -3,37 +3,33 @@ import { useResizeDetector } from "react-resize-detector";
 import me from "../assets/me.jpg";
 import { cn } from "../utils";
 
-type ArticleBlockProps = {
+const text1 = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magnam aliquam
+quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
+dolemus, fieri tamen permagna accessio potest, si aliquod aeternum
+et infinitum impendere malum nobis opinemur. Quod idem licet
+transferre in voluptatem, ut postea.
+`;
+
+const text2 = `
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.
+Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+accessio potest, si aliquod aeternum et infinitum impendere malum nobis
+opinemur. Quod idem licet transferre in voluptatem, ut.
+`;
+
+export function ArticleBlock(props: {
   className?: string;
-  classNameTitle?: string;
   title?: string;
   children: React.ReactNode;
-};
-
-export function ArticleBlock(props: ArticleBlockProps) {
+}) {
   return (
     <article className={cn("text-lg font-light", props.className)}>
-      <h1 className={cn("text-2xl font-medium", props.classNameTitle)}>
-        {props.title}
-      </h1>
+      <h1 className="text-2xl font-medium">{props.title}</h1>
       <p>{props.children}</p>
     </article>
-  );
-}
-
-type HobbiesBlockProps = {
-  className?: string;
-};
-
-function HobbiesBlock(props: HobbiesBlockProps) {
-  return (
-    <ArticleBlock className={props.className} title="Lorem ipsum">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.
-      Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
-      accessio potest, si aliquod aeternum et infinitum impendere malum nobis
-      opinemur. Quod idem licet transferre in voluptatem, ut.
-    </ArticleBlock>
   );
 }
 
@@ -86,20 +82,17 @@ export default function Home() {
         <div className="animate-fade-up sm:pr-10">
           <PaddingBlock />
           <HeightBlock className="gap-5">
-            <ArticleBlock>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magnam aliquam
-              quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore
-              dolemus, fieri tamen permagna accessio potest, si aliquod aeternum
-              et infinitum impendere malum nobis opinemur. Quod idem licet
-              transferre in voluptatem, ut postea.
+            <ArticleBlock>{text1}</ArticleBlock>
+            <ArticleBlock className="hidden lg:block" title="Interessen">
+              {text2}
             </ArticleBlock>
-            <HobbiesBlock className="hidden lg:block"></HobbiesBlock>
           </HeightBlock>
           <div className="lg:hidden">
             <PaddingBlock />
             <HeightBlock>
-              <HobbiesBlock></HobbiesBlock>
+              <ArticleBlock className="block" title="Interessen">
+                {text2}
+              </ArticleBlock>
             </HeightBlock>
           </div>
         </div>
