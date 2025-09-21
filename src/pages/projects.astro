@@ -1,5 +1,41 @@
 ---
+import codePic from "../assets/code.jpg";
+import dancePic from "../assets/dance.webp";
+import pianoPic from "../assets/piano.jpg";
+import Clamp from "../components/Clamp.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout> Projects </Layout>
+<Layout>
+  <Clamp class="flex flex-col gap-16 py-12">
+    <ProjectCard title="Coding" image={codePic} alt={"Monitor with code"}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+      accessio potest, si aliquod aeternum et infinitum impendere malum nobis
+      opinemur. Quod idem licet transferre in voluptatem, ut.
+    </ProjectCard>
+
+    <ProjectCard
+      title="Dancing"
+      image={dancePic}
+      alt={"People dancing in an abstract style"}
+      layoutReverse
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+      accessio potest, si aliquod aeternum et infinitum impendere malum nobis
+      opinemur. Quod idem licet transferre in voluptatem, ut.
+    </ProjectCard>
+
+    <ProjectCard title="Piano" image={pianoPic} alt={"Picture of Piano"}>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna
+      accessio potest, si aliquod aeternum et infinitum impendere malum nobis
+      opinemur. Quod idem licet transferre in voluptatem, ut.
+    </ProjectCard>
+  </Clamp>
+</Layout>
