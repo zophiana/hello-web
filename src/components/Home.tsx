@@ -103,7 +103,7 @@ export default function Home() {
         alt="An image from me"
         width={me.width}
         height={me.height}
-        className="image animate-fade-left sticky z-auto h-fit w-full max-w-sm sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
+        className="animate-fade-left sticky z-auto h-fit w-full max-w-sm rounded-xl border border-slate-500 sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
       ></img>
     </div>
   );

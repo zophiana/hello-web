@@ -31,7 +31,7 @@ const props = Astro.props;
     src={props.image}
     alt={props.alt}
     class={cn(
-      "image h-fit md:w-1/2 lg:w-5/12",
+      "rounded-xl border border-slate-500 h-fit md:w-1/2 lg:w-5/12",
       props.layoutReverse ? "animate-fade-right" : "animate-fade-left",
     )}
   />
