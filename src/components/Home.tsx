@@ -108,8 +108,8 @@ export default function Home() {
         ref={ref}
         src={me.src}
         alt="An image from me"
-        width={0}
-        height={0}
+        width={me.width}
+        height={me.height}
         className="image animate-fade-left sticky z-auto h-fit w-full max-w-sm sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
       ></img>
     </div>
