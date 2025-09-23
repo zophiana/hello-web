@@ -1,4 +1,5 @@
-import { useState } from "react";
+import type { ComponentChildren } from "preact";
+import { useState } from "preact/hooks";
 import { useResizeDetector } from "react-resize-detector";
 
 import me from "../assets/me.avif";
@@ -24,7 +25,7 @@ opinemur. Quod idem licet transferre in voluptatem, ut.
 export function ArticleBlock(props: {
   className?: string;
   title?: string;
-  children: React.ReactNode;
+  children: ComponentChildren;
 }) {
   return (
     <article className={cn("text-lg font-light", props.className)}>
@@ -44,7 +45,7 @@ export default function Home() {
 
   type HeightBlockProps = {
     className?: string;
-    children: React.ReactNode;
+    children: ComponentChildren;
   };
 
   function HeightBlock(props: HeightBlockProps) {
