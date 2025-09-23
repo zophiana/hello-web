@@ -27,6 +27,7 @@
     "react-dom": "^19.1.1",
     "react-resize-detector": "^12.3.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "tailwindcss-animated": "^2.0.0"
   }
 }
