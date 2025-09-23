@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { useResizeDetector } from "react-resize-detector";
 
-import me from "../assets/me.jpg";
+import me from "../assets/me.avif";
 import { cn } from "../utils";
 
 const text1 = `
@@ -39,6 +40,7 @@ function PaddingBlock() {
 
 export default function Home() {
   const { width, height, ref } = useResizeDetector();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   type HeightBlockProps = {
     className?: string;
@@ -60,7 +62,12 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col-reverse items-center py-4 sm:flex-row sm:[align-items:_unset] sm:py-12 sm:ps-4 sm:pe-8 md:py-20 md:ps-16 md:pe-20">
+    <div
+      className={cn(
+        "flex flex-col-reverse items-center py-4 sm:flex-row sm:[align-items:_unset] sm:py-12 sm:ps-4 sm:pe-8 md:py-20 md:ps-16 md:pe-20",
+        { hidden: !imageLoaded },
+      )}
+    >
       <div className="z-10 flex min-w-0 flex-col">
         <div
           style={{
@@ -103,6 +110,8 @@ export default function Home() {
         alt="An image from me"
         width={me.width}
         height={me.height}
+        onLoad={() => setImageLoaded(true)}
+        onError={() => setImageLoaded(true)}
         className="animate-fade-left sticky z-auto h-fit w-full max-w-sm rounded-xl border border-slate-500 motion-reduce:animate-none sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
       ></img>
     </div>
