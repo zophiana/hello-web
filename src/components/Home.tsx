@@ -67,7 +67,7 @@ export default function Home() {
             ["--min-height" as string]: `${height}px`,
             ["--width" as string]: `${width}px`,
           }}
-          className={`animate-fade-up flex w-[var(--width)] flex-col justify-center self-center sm:min-h-[var(--min-height)] sm:w-full`}
+          className={`animate-fade-up flex w-[var(--width)] flex-col justify-center self-center motion-reduce:animate-none sm:min-h-[var(--min-height)] sm:w-full`}
         >
           <div className="pt-10 text-5xl font-semibold sm:w-full sm:pt-0 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             <h1 className="inline-block">Hi, I&apos;m</h1>
@@ -79,7 +79,7 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="animate-fade-up sm:pr-10">
+        <div className="animate-fade-up motion-reduce:animate-none sm:pr-10">
           <PaddingBlock />
           <HeightBlock className="gap-5">
             <ArticleBlock>{text1}</ArticleBlock>
@@ -103,7 +103,7 @@ export default function Home() {
         alt="An image from me"
         width={me.width}
         height={me.height}
-        className="animate-fade-left sticky z-auto h-fit w-full max-w-sm rounded-xl border border-slate-500 sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
+        className="animate-fade-left sticky z-auto h-fit w-full max-w-sm rounded-xl border border-slate-500 motion-reduce:animate-none sm:top-[6.5rem] sm:max-w-none sm:min-w-[45%] md:top-[8.5rem] md:min-w-[47%] lg:min-w-[43%]"
       ></img>
     </div>
   );
