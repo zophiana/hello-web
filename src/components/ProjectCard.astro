@@ -19,7 +19,9 @@ const props = Astro.props;
     props.layoutReverse && "md:flex-row-reverse",
   )}
 >
-  <div class="animate-fade-up motion-reduce:animate-none md:w-1/2 lg:w-7/12">
+  <div
+    class="animate-fade-up animate-duration-[1400ms] animate-delay-[200ms] animate-ease-[cubic-bezier(0.4,0.5,0.25,1.0)] motion-reduce:animate-none md:w-1/2 lg:w-7/12"
+  >
     <article class="text-lg font-light max-lg:text-base">
       <h1 class="text-2xl font-medium max-lg:text-xl">
         {props.title}
@@ -31,7 +33,7 @@ const props = Astro.props;
     src={props.image}
     alt={props.alt}
     class={cn(
-      "rounded-xl border border-slate-500 h-fit motion-reduce:animate-none md:w-1/2 lg:w-5/12",
+      "animate-duration-[2000ms] animate-delay-[200ms] animate-ease-[cubic-bezier(0.4,0.5,0.25,1.0)] rounded-xl border border-slate-500 h-fit motion-reduce:animate-none md:w-1/2 lg:w-5/12",
       props.layoutReverse ? "animate-fade-right" : "animate-fade-left",
     )}
   />
