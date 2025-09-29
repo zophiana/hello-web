@@ -1,10 +1,13 @@
 ---
+import me from "../assets/me.avif";
 import Clamp from "../components/Clamp.astro";
 import Home from "../components/Home";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <link slot="meta" rel="preload" href={me.src} as="image" type="image/avif" />
+
   <Clamp class="justify-center pb-96">
     <Home client:only="react" />
   </Clamp>
