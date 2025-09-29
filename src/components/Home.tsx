@@ -43,12 +43,10 @@ export default function Home() {
   const { width, height, ref } = useResizeDetector();
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  type HeightBlockProps = {
+  function HeightBlock(props: {
     className?: string;
     children: ComponentChildren;
-  };
-
-  function HeightBlock(props: HeightBlockProps) {
+  }) {
     return (
       <div
         style={{ ["--min-height" as string]: `${height}px` }}
@@ -75,7 +73,7 @@ export default function Home() {
             ["--min-height" as string]: `${height}px`,
             ["--width" as string]: `${width}px`,
           }}
-          className={`animate-fade-up flex w-[var(--width)] flex-col justify-center self-center motion-reduce:animate-none sm:min-h-[var(--min-height)] sm:w-full`}
+          className="animate-fade-up flex w-[var(--width)] flex-col justify-center self-center motion-reduce:animate-none sm:min-h-[var(--min-height)] sm:w-full"
         >
           <div className="pt-10 text-5xl font-semibold sm:w-full sm:pt-0 sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
             <h1 className="inline-block">Hi, I&apos;m</h1>
