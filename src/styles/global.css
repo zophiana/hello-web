@@ -55,7 +55,10 @@
 }
 
 @theme {
-  --font-sans: "Geist", "sans-serif";
+  --font-tw-default-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Geist Variable", var(--font-tw-default-sans);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 }
