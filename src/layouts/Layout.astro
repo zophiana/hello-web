@@ -2,8 +2,14 @@
 import "../styles/global.css";
 import "@fontsource-variable/geist";
 
+import ogImage from "../assets/ogImage.png";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+const title = "Hi, I'm Antonia";
+const description =
+  "a software developer by heart. I love building beautiful, polished things. Elixir is my most admired language.";
+const ogImageAbsolutePath = new URL(ogImage.src, Astro.url).toString();
 ---
 
 <!doctype html>
@@ -11,10 +17,17 @@ import Header from "../components/Header.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <slot name="meta" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>{title}</title>
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageAbsolutePath} />
+    <meta property="og:image:width" content={ogImage.width.toString()} />
+    <meta property="og:image:height" content={ogImage.height.toString()} />
+    <meta property="twitter:card" content="summary_large_image" />
   </head>
   <body
     class="bg-background text-foreground flex min-h-screen flex-col font-sans antialiased"
